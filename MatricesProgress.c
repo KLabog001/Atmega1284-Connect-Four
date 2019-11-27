@@ -1,5 +1,6 @@
 //Scheduler Code
 #include <avr/io.h>
+#include <avr/interrupt.h>
 //#include "io.c" //included from directory
 
 void ADC_init() {
