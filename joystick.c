@@ -98,21 +98,25 @@ int main(void)
 		ADCINPUT = ADC;
 // 		tempB = (char)ADCINPUT;
 // 		tempD = (char)(ADCINPUT >> 8);
-		if(ADCINPUT < 341)
+		if(ADCINPUT < 500)
 		{
 			PORTB = 0x02;	
 		} //left
-		if(ADCINPUT > 682)
+		else if(ADCINPUT > 682)
 		{
 			PORTB = 0x01;
 		} // right
-		if ( ADCINPUT < 682 && ADCINPUT > 341)
+		
+		if (~PINA & 0x04)
+		{
+			PORTB = 0x04;
+		}
+		else
 		{
 			PORTB = 0x00;
-		} // rest
-		
-		
-	}
+		}
+}
+	
 	
 	return 0;
 }
